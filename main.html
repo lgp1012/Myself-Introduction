@@ -36,9 +36,9 @@
                 <button id="btn-seemore">Theo dõi hành trình này cùng mình nha</button>
             </div>
             <div class="content-introduction-right">
-                <i class="ti-arrow-circle-left"></i>
-                <img src="./assets/images/z7615464275887_7ec21de25305e337cab638b3d396c05a.jpg" alt="">
-                <i class="ti-arrow-circle-right"></i>
+                <i class="ti-arrow-circle-left" id="btn-prev-img"></i>
+                <img src="./assets/images/myself1.jpg" alt="">
+                <i class="ti-arrow-circle-right" id="btn-next-img"></i>
             </div>
         </div>
 
@@ -46,88 +46,88 @@
             <h1>--- Hành trình đức tin của mình ---</h1>
 
             <div class="content-journey-boxes">
-                <div class="content-journey-box">
+                <div class="content-journey-box" id="nganhau">
                     <img src="./assets/images/nganhau.jpg" alt="">
                     <div class="journey-box-text">
                         <h2>Trại Ngành ấu</h2>
-                        <p>Thời gian: </p>
+                        <p>Thời gian: 2023</p>
                     </div>
                     <button class="btn-detail-journey">Xem thêm</button>
                 </div>
 
                 <i class="ti-angle-double-down arrow-icon"></i>
 
-                <div class="content-journey-box">
-                    <img src="./assets/images/siloammyself.jpg" alt="">
+                <div class="content-journey-box" id="siloam">
+                    <img src="./assets/images/siloam.jpg" alt="">
                     <div class="journey-box-text">
                         <h2>Trại Siloam</h2>
-                        <p>Thời gian: </p>
+                        <p>Thời gian: 2023</p>
                     </div>
                     <button class="btn-detail-journey">Xem thêm</button>
                 </div>
 
                 <i class="ti-angle-double-down arrow-icon"></i>
 
-                <div class="content-journey-box">
+                <div class="content-journey-box" id="vaodoi">
                     <img src="./assets/images/tuyenhuavaodoi.png" alt="">
                     <div class="journey-box-text">
                         <h2>Tuyên hứa Vào đời & Trao khăn Dự trưởng</h2>
-                        <p>Thời gian: </p>
+                        <p>Thời gian: 2023</p>
                     </div>
                     <button class="btn-detail-journey">Xem thêm</button>
                 </div>
 
                 <i class="ti-angle-double-down arrow-icon"></i>
 
-                <div class="content-journey-box">
+                <div class="content-journey-box" id="thamgia-htc1">
                     <img src="./assets/images/htc1.jpg" alt="">
                     <div class="journey-box-text">
                         <h2>Tham gia khoá học Huynh Trưởng cấp 1</h2>
-                        <p>Thời gian: </p>
+                        <p>Thời gian: 2024</p>
                     </div>
                     <button class="btn-detail-journey">Xem thêm</button>
                 </div>
 
                 <i class="ti-angle-double-down arrow-icon"></i>
 
-                <div class="content-journey-box">
+                <div class="content-journey-box" id="samac-htc1">
                     <img src="./assets/images/smht.jpg" alt="">
                     <div class="journey-box-text">
                         <h2>Tham gia Sa mạc huấn luyện Huynh Trưởng cấp 1</h2>
-                        <p>Thời gian: </p>
+                        <p>Thời gian: 2024</p>
                     </div>
                     <button class="btn-detail-journey">Xem thêm</button>
                 </div>
 
                 <i class="ti-angle-double-down arrow-icon"></i>
 
-                <div class="content-journey-box">
+                <div class="content-journey-box" id="tuyenhua-htc1">
                     <img src="./assets/images/thc1.jpg" alt="">
                     <div class="journey-box-text">
                         <h2>Tuyên hứa Huynh Trưởng cấp 1</h2>
-                        <p>Thời gian: </p>
+                        <p>Thời gian: 2024</p>
                     </div>
                     <button class="btn-detail-journey">Xem thêm</button>
                 </div>
 
                 <i class="ti-angle-double-down arrow-icon"></i>
 
-                <div class="content-journey-box">
+                <div class="content-journey-box" id="thamgia-glvc1">
                     <img src="./assets/images/hocglvc1.jpg" alt="">
                     <div class="journey-box-text">
                         <h2>Tham gia khoá học Giáo lý viên cấp 1</h2>
-                        <p>Thời gian: </p>
+                        <p>Thời gian: 2024</p>
                     </div>
                     <button class="btn-detail-journey">Xem thêm</button>
                 </div>
 
                 <i class="ti-angle-double-down arrow-icon"></i>
 
-                <div class="content-journey-box">
+                <div class="content-journey-box" id="totnghiep-glvc1">
                     <img src="./assets/images/glvc1.jpg" alt="">
                     <div class="journey-box-text">
                         <h2>Tốt nghiệp khoá học Giáo lý viên cấp 1</h2>
-                        <p>Thời gian: </p>
+                        <p>Thời gian: 2025</p>
                     </div>
                     <button class="btn-detail-journey">Xem thêm</button>
                 </div>
@@ -163,6 +163,21 @@
 
         <div id="footer">
             <p>Copyright © 2026 Vincentê Lưu Gia Phúc. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div id="modal-overplay" class="overplay">
+        <div id="modal-journey" class="modal-content-box">
+            <div class="modal-title">
+                <h2 id="modal-title"></h2>
+            </div>
+            <div class="modal-content">
+                <img id="modal-img" src="" alt="">
+                <p id="modal-message"></p>
+            </div>
+            <div class="modal-btn">
+                <button id="btn-close-modal">Đóng</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

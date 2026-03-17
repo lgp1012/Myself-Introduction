@@ -66,7 +66,7 @@ html {
     align-items: center;
     justify-content: space-between;
     padding: 20px 70px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #page-introduction::before{
@@ -116,7 +116,7 @@ html {
 }
 
 #page-introduction .content-introduction-left p{
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Arvo", serif;
     text-align: center;
     margin-bottom: 25px;
@@ -277,7 +277,7 @@ html {
 }
 
 #page-journey .content-journey-box .journey-box-text p{
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
@@ -355,7 +355,7 @@ html {
     position: relative;
     display: flex;
     padding: 20px 70px;
-    height: 80vh;
+    min-height: 80vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -377,7 +377,7 @@ html {
 
 #page-contact .content-contact{
     width: 70%;
-    height: 75%;
+    min-height: 75%;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -402,7 +402,9 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 60px;
+    padding-bottom: 60px;
     gap: 20px;
     align-items: center;
 }
@@ -447,15 +449,14 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
+    justify-content: flex-start;
+    padding-top: 60px;
 }
 
 #page-contact .content-contact .info-contact h1{
-    position: absolute;
-    top: 65px;
     width: 100%;             /* Mở rộng chiều ngang cho chữ chiếm hết không gian khung chứa */
     text-align: center;      /* Căn giữa chữ */
+    margin-bottom: 20px;
 }
 
 #page-contact .content-contact .info-contact label {
@@ -482,4 +483,249 @@ html {
     padding: 20px 0;
     width: 100%;
     background-color: #5f7252;
+}
+
+/* Modal */
+.overplay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content-box {
+    background-color: #b3bb70;
+    width: 70%;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+#modal-title {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #d4f309;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 3px 5px black;
+    border-bottom: 2px solid rgb(210, 247, 10);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-content #modal-img{
+    width: 37%;
+    height: 60%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.modal-content #modal-message{
+    width: 70%;
+    height: 60%;
+    background-color: rgb(253, 250, 174);
+    padding: 20px;
+    color: #373d0d;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    white-space: pre-line;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+#btn-close-modal{
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    background-color: #6a751e; /* Điều chỉnh màu xanh lá cây hơi sáng hơn một chút */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    cursor: pointer;
+    box-shadow: 6px 6px 0px #3f4414; /* Đổ bóng khối cứng có màu đậm */
+    transition: all 0.2s ease;
+}
+
+#btn-close-modal:hover{
+    background-color: #768222;
+}
+
+#btn-close-modal:active{
+    box-shadow: 2px 2px 0px #3f4414;
+    transform: translate(4px, 4px);
+}
+
+/* ========================================= */
+/* Media Queries cho Reponsive Design        */
+/* ========================================= */
+
+@media screen and (max-width: 1024px) {
+    #page-contact .content-contact {
+        width: 90%;
+    }
+    
+    #page-journey h1 {
+        font-size: 55px;
+    }
+    
+    #page-journey .content-journey-box .journey-box-text h2 {
+        font-size: 28px;
+    }
+    
+    #page-introduction .content-introduction-left h1 {
+        font-size: 32px;
+    }
+    
+    #page-introduction .content-introduction-left h3 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Navbar responsive */
+    #navbar {
+        padding: 0 10px;
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 10px;
+    }
+    #navbar .nav-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /* Introduction responsive */
+    #page-introduction {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 100px 20px 20px 20px;
+    }
+    #page-introduction .content-introduction-left,
+    #page-introduction .content-introduction-right {
+        position: relative;
+        width: 100%;
+        top: 0; left: 0; right: 0;
+        height: auto;
+    }
+    #page-introduction .content-introduction-right img {
+        width: 80%;
+    }
+    
+    /* Journey responsive */
+    #page-journey {
+        padding: 20px;
+    }
+    #page-journey h1 {
+        font-size: 40px;
+        padding: 0;
+    }
+    #page-journey .content-journey-boxes {
+        width: 100%;
+        padding: 0;
+    }
+    #page-journey .content-journey-box {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    #page-journey .content-journey-box img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    #page-journey .content-journey-box .journey-box-text {
+        width: 100%;
+    }
+    #page-journey .content-journey-box .journey-box-text h2 {
+        font-size: 24px;
+    }
+    #page-journey #message-box #message {
+        font-size: 35px;
+    }
+    #page-journey #message-box #author {
+        font-size: 20px;
+    }
+    #page-journey #end-text {
+        font-size: 18px;
+    }
+    
+    /* Contact responsive */
+    #page-contact {
+        padding: 20px;
+    }
+    #page-contact .content-contact {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding-bottom: 40px;
+    }
+    #page-contact .content-contact .form-contact,
+    #page-contact .content-contact .info-contact {
+        width: 100%;
+        padding-top: 40px;
+    }
+    #page-contact .content-contact .info-contact {
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* Text size reduction globally for mobile */
+    #page-contact .content-contact h1 {
+        font-size: 30px;
+    }
+    #page-contact .content-contact .form-contact input,
+    #page-contact .content-contact .form-contact button,
+    #page-contact .content-contact .info-contact label,
+    #page-contact .content-contact .info-contact p,
+    .btn-detail-journey,
+    #btn-seemore {
+        font-size: 16px;
+    }
+    
+    #page-contact .content-contact .form-contact input {
+        width: 90%;
+    }
+    #page-contact .content-contact .form-contact button {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #page-journey h1 {
+        font-size: 30px;
+    }
+    #page-introduction .content-introduction-left h1 {
+        font-size: 26px;
+    }
+    #page-introduction .content-introduction-left h3 {
+        font-size: 20px;
+    }
+    #page-introduction .content-introduction-left p {
+        font-size: 16px;
+    }
 }
