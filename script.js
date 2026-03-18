@@ -59,7 +59,7 @@ let indexImgIntroduction = 0;
 btnNextImg.addEventListener("click", () => {
     indexImgIntroduction++;
     if (indexImgIntroduction >= imgMyself.length) {
-        indexImgIntroduction = 0; // Quay lại ảnh đầu tiên
+        indexImgIntroduction = 0;
     }
     imgIntroduction.src = `./assets/images/${imgMyself[indexImgIntroduction]}.jpg`;
 });
@@ -67,7 +67,7 @@ btnNextImg.addEventListener("click", () => {
 btnPrevImg.addEventListener("click", () => {
     indexImgIntroduction--;
     if (indexImgIntroduction < 0) {
-        indexImgIntroduction = imgMyself.length - 1; // Đi tới ảnh cuối cùng
+        indexImgIntroduction = imgMyself.length - 1;
     }
     imgIntroduction.src = `./assets/images/${imgMyself[indexImgIntroduction]}.jpg`;
 });
@@ -114,4 +114,90 @@ window.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
     }
+});
+
+// Validate Contact form
+const btnSubmitFormContact = document.getElementById("btn-submit-form-contact");
+
+// Thông báo lỗi riêng cho từng ô
+const errorMessages = {
+    "name": "⚠ Vui lòng nhập họ & tên",
+    "email": "⚠ Email không hợp lệ (vd: example@gmail.com)",
+    "message": "⚠ Nội dung cần ít nhất 10 ký tự"
+};
+
+function validateForm() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    return {
+        "name": name.trim() !== "",
+        "email": /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email),
+        "message": message.trim() !== "" && message.trim().length >= 10
+    }
+}
+
+function isValidForm(form) {
+    return Object.values(form).every((value) => value);
+}
+
+// Hiện thông báo lỗi ngay dưới ô input
+function showError(input, message) {
+    // Xoá thông báo cũ nếu có
+    clearError(input);
+
+    input.style.border = "2px solid red";
+
+    const errorEl = document.createElement("small");
+    errorEl.classList.add("input-error-msg");
+    errorEl.textContent = message;
+
+    // Chèn thẻ small ngay sau ô input
+    input.insertAdjacentElement("afterend", errorEl);
+}
+
+// Xoá thông báo lỗi
+function clearError(input) {
+    input.style.border = "";
+    const next = input.nextElementSibling;
+    if (next && next.classList.contains("input-error-msg")) {
+        next.remove();
+    }
+}
+
+function clearTextInput(input) {
+    input.value = "";
+}
+
+btnSubmitFormContact.addEventListener("click", () => {
+    const inputs = document.querySelectorAll(".form-contact input");
+    const form = validateForm();
+
+    if (!isValidForm(form)) {
+        inputs.forEach((input) => {
+            const field = input.id;
+            if (!form[field]) {
+                showError(input, errorMessages[field]);
+            } else {
+                clearError(input);
+            }
+        });
+    } else {
+        // Xoá hết lỗi khi hợp lệ
+        inputs.forEach((input) => {
+            clearError(input);
+            clearTextInput(input);
+        });
+
+        alert("Cảm ơn bạn đã gửi lời nhắn!");
+    }
+});
+
+// Tắt viền đỏ và thông báo lỗi khi người dùng bắt đầu nhập
+const inputsConfig = document.querySelectorAll(".form-contact input");
+inputsConfig.forEach((input) => {
+    input.addEventListener("input", () => {
+        clearError(input);
+    });
 });

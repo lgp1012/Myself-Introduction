@@ -134,7 +134,7 @@
                 <p id="end-text">Hiện tại chỉ tới đây thôi, nhưng hành trình của mình còn dài lắm...</p>
 
                 <div id="message-box">
-                    <p id="message">“ Sự hy sinh vì người khác là con đường dẫn đến niềm vui thật sự.” </p>
+                    <p id="quote-message">“ Sự hy sinh vì người khác là con đường dẫn đến niềm vui thật sự.” </p>
                     <p id="author">-- Đức Giáo Hoàng Phanxico --</p>
                 </div>
             </div>
@@ -144,15 +144,15 @@
             <div class="content-contact">
                 <div class="form-contact">
                     <h1>Liên hệ</h1>
-                    <input type="text" placeholder="Họ & tên">
-                    <input type="text" placeholder="Email">
-                    <input type="text" placeholder="Nhập điều bạn muốn nói ...">
-                    <button type="submit">Gửi</button>
+                    <input type="text" placeholder="Họ & tên" id="name" required>
+                    <input type="email" placeholder="Email" id="email" required>
+                    <input type="text" placeholder="Nhập điều bạn muốn nói ..." id="message" required>
+                    <button type="submit" id="btn-submit-form-contact">Gửi</button>
                 </div>
                 <div class="info-contact">
                     <h1>Thông tin liên hệ</h1>
-                    <label for="email">Email: </label>
-                    <p class="info-text" id="email">luugiaphuc1012@gmail.com</p>
+                    <label for="info-email">Email: </label>
+                    <p class="info-text" id="info-email">luugiaphuc1012@gmail.com</p>
                     <label for="phone">Số điện thoại: </label>
                     <p class="info-text" id="phone">0789818913</p>
                     <label for="address">Địa chỉ: </label>
